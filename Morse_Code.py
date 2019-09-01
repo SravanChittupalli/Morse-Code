@@ -16,13 +16,13 @@ MORSE_CODE_DICT = { 'A':'.-',   'B':'-...',
 decodedword = ''
 
 
-def encode(string , final):
+def encode(string , encodedword):
     if (string == ' '):
-        final = final + '  '
+        encodedword = encodedword + '  '
     else:
         encoded = MORSE_CODE_DICT[string]
-        final = final + encoded + ' '
-    return final
+        encodedword = encodedword + encoded + ' '
+    return encodedword
 
 def decode(encodedword):
     for key , value in MORSE_CODE_DICT.items():
@@ -32,11 +32,10 @@ def decode(encodedword):
     
 if __name__ == '__main__':
     message = input("Enter The Sentence To Be Converted To Morse Code : ")
-    final = ''
-    length = len(message)
+    encodedword = ''
     for i in message :
-        final = encode(i , final)
-    print(final)
+        encodedword = encode(i , encodedword)
+    print(encodedword)
     
 
     encodedmess = input("Enter The Encoded Message To Be Decoded : ")
